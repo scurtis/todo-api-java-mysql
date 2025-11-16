@@ -18,12 +18,11 @@ A **TODO API** built with **Java 21 + Spring Boot + MySQL**
    CREATE USER 'todo_user'@'localhost' IDENTIFIED BY 'todo123';
    GRANT ALL ON todo_db.* TO 'todo_user'@'localhost';
 
-   Clone:bash
 
-git clone https://github.com/your-username/todo-api-java-mysql.git
-cd todo-api-java-mysql
 
-Run:bash
+3. Checkout code: git clone https://github.com/your-username/todo-api-java-mysql.git
+   cd todo-api-java-mysql
+   Run the following to start the spring-boot app:
+   ./mvnw spring-boot:run
 
-./mvnw spring-boot:run
 
