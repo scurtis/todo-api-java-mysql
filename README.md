@@ -21,8 +21,9 @@ A **TODO API** built with **Java 21 + Spring Boot + MySQL**
 
 
 3. Checkout code: git clone https://github.com/your-username/todo-api-java-mysql.git
-   cd todo-api-java-mysql
-   Run the following to start the spring-boot app:
-   ./mvnw spring-boot:run
+   - cd todo-api-java-mysql
+   - Run the following to start the spring-boot app:
+   - ./mvnw spring-boot:run
+
 
 
