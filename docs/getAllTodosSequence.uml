@@ -1,0 +1,27 @@
+@startuml
+actor Client
+participant "TodoController" as Controller
+participant "TodoService" as Service
+participant "TodoRepository" as Repo
+participant "Hibernate / JPA" as JPA
+participant "JDBC" as JDBC
+database "MySQL" as DB
+participant "TodoMapper" as Mapper
+participant "Jackson" as JSON
+
+Client -> Controller : GET /todos
+Controller -> Service : getAllTodos()
+Service -> Repo : findAll()
+Repo -> JPA : build query / execute
+JPA -> JDBC : SQL: SELECT * FROM todo
+JDBC -> DB : execute
+DB --> JDBC : rows
+JDBC --> JPA : resultset
+JPA --> Repo : List<TodoEntity>
+Repo --> Service : List<TodoEntity>
+Service -> Mapper : toDtoList(entities)
+Mapper --> Service : List<TodoDTO>
+Service --> Controller : List<TodoDTO>
+Controller -> JSON : serialize
+JSON --> Client : 200 OK + JSON
+@enduml
